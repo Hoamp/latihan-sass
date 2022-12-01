@@ -1,0 +1,11 @@
+$warna: blue;
+header {
+    background-color: $warna;
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        color: $warna;
+    }
+}
