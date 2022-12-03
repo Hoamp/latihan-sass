@@ -1,0 +1,38 @@
+// variable css
+// :root {
+//     --primary-color: #c0ffee;
+//     --secondary-color: #abadad;
+// }
+
+// body {
+//     background-color: var(--primary-color);
+// }
+// .header {
+//     color: var(--secondary-color);
+// }
+
+// variabel sass
+// $secondary: #abadad;
+// $primary: #c0ffee;
+
+// body {
+//     $primary: #c0ffee !global;
+//     background-color: $primary;
+// }
+// h1 {
+//     color: $primary;
+// }
+
+// map
+// $alert-danger: red;
+// $alert-success: green;
+// $alert-warning: orange;
+$alert: (
+    "danger": red,
+    "success": green,
+    "warning": orange,
+);
+
+h1 {
+    color: map-get($alert, "warning");
+}
