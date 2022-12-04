@@ -1,0 +1,14 @@
+@use "mixin" as m;
+.container {
+    @include m.flexbox(row-reverse, #ffffff);
+    width: 700px;
+    height: 400px;
+    background-color: #eaeaea;
+    .box {
+        width: 70px;
+        height: 70px;
+        background-color: green;
+        text-align: center;
+        line-height: 70px;
+    }
+}
