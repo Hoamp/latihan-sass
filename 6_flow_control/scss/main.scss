@@ -1,0 +1,77 @@
+// if
+@mixin poto-profil($ukuran, $bulat: false) {
+    width: $ukuran;
+    height: $ukuran;
+    box-shadow: 1px 1px 3px grey;
+    border: 5px solid white;
+
+    @if $bulat {
+        border-radius: 50%;
+    }
+}
+
+.profil-kotak {
+    @include poto-profil(200px, $bulat: false);
+}
+.profil-bulat {
+    @include poto-profil(200px, $bulat: true);
+}
+
+// else
+$bg-light: #fff;
+$text-light: #333;
+$bg-dark: #999;
+$text-dark: #ddd;
+
+@mixin mode($light: true) {
+    width: 200px;
+    height: 200px;
+    @if $light {
+        background-color: $bg-light;
+        color: $text-light;
+    } @else {
+        background-color: $bg-dark;
+        color: $text-dark;
+    }
+}
+
+.mode {
+    @include mode($light: false);
+}
+
+// else if
+@mixin segitiga($ukuran, $warna, $arah) {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-color: transparent;
+    border-style: solid;
+    border-width: $ukuran / 2;
+    @if $arah == up {
+        border-bottom-color: $warna;
+    } @else if $arah == right {
+        border-left-color: $warna;
+    } @else if $arah == down {
+        border-top-color: $warna;
+    } @else {
+        border-right-color: $warna;
+    }
+}
+
+.segitiga {
+    @include segitiga(2em, green, left);
+}
+
+// for
+$color: salmon;
+.gradiasi {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    @for $i from 1 to 11 {
+        li:nth-child(#{$i}) {
+            padding: 4px;
+            background-color: lighten($color, $i * 3%);
+        }
+    }
+}
